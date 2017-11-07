@@ -1,0 +1,282 @@
+﻿/*Layout Page CSS*/
+body {
+    background: #D9D8DF;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+#header {
+    z-index: 2;
+    position: fixed;
+    height: 100px;
+    top: 0;
+    width: 100%;
+    line-height: 60px;
+    background: #000000;
+}
+
+    #header img {
+        top: 0px;
+        margin: 13px;
+        height: 70px;
+        width: auto;
+    }
+
+#nav {
+    position: absolute;
+    right: 5px;
+    top: -15px;
+    height: 60px;
+    text-transform: uppercase;
+}
+
+    #nav ul li {
+        float: left;
+        list-style: none;
+    }
+
+#navlinks {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1500px;
+    font-family: helvetica, sans-serif;
+}
+
+.content {
+    position: relative;
+    padding-top: 80px;
+    top: 45px;
+}
+
+/*Element Selectors*/
+a {
+    text-decoration: none;
+    color: black;
+}
+
+    a h4:hover {
+        color: darkslateblue;
+    }
+
+table {
+    width: 100%;
+    padding: 5px 20px 5px 20px;
+}
+
+th {
+    font-size: large;
+    height: 60px;
+}
+
+/*General Styles*/
+.bold {
+    font-weight: 700;
+}
+
+.inline {
+    display: inline;
+}
+
+#inline-block {
+    display: inline-block;
+}
+
+.quote {
+    font-style: italic;
+    width: 800px;
+}
+
+.red-text {
+    color: firebrick;
+}
+
+.small-text {
+    font-size: 13px;
+}
+
+/*Index Page Styles*/
+.index-name-adjust {
+    margin: -10px 5px 5px 5px;
+}
+
+.index-desc-adjust {
+    margin: -20px 5px 5px 5px;
+}
+
+.index-images {
+    width: 420px;
+    height: auto;
+}
+
+.index-tiles {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+}
+
+#index-text {
+    width: 420px;
+    text-align: left;
+}
+
+#read-more {
+    font-size: small;
+    font-weight: bold;
+}
+
+    #read-more:hover {
+        color: darkslateblue;
+    }
+
+/*Detail Page Styles*/
+#detail-img {
+    vertical-align: top;
+    text-align: left;
+    display: inline-block;
+    margin-right: 30px;
+    width: 650px;
+    height: auto;
+}
+
+#detail-display {
+    vertical-align: top;
+    text-align: left;
+    display: inline-block;
+    width: 500px;
+    margin-left: 5%;
+}
+
+
+#celsius-container td {
+    border-collapse: collapse;
+    width: 100%
+}
+
+#radio-buttons {
+    text-align: left;
+    list-style: none;
+    display: inline-block;
+}
+
+#button {
+    display: inline-block;
+    margin: 0 5px 5px 0px;
+}
+
+.weather-table {
+    border-collapse: collapse;
+}
+
+    .weather-table td {
+        border-right: solid 1px #000;
+        border-left: solid 1px #000;
+        width: 20% !important;
+        text-align: center;
+        vertical-align: top;
+    }
+
+.weather-container {
+    background-color: white;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.weather-temps {
+    font-weight: 700;
+}
+
+#weather-img {
+    height: 75px;
+    width: auto;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#weather-recommendations {
+    text-align: left;
+    list-style-type: square
+}
+
+#weather-forecast {
+    text-align: center;
+    font-weight: 800;
+    font-size: medium;
+}
+
+
+/*Survey Page Styles*/
+
+#head-color {
+    color:darkgreen
+}
+
+.survey-container {
+    background-color: white;
+    width: 35%;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 15px;
+    float:left;
+    position:relative;
+    left:85px
+}
+
+.survey-input {
+    text-align: left;
+}
+
+#submit-button {
+    margin-top:30px;
+}
+
+#survey-image {
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    float: right;
+    height: 342px;
+    width: auto;
+    position: relative;
+    right: 85px
+}
+
+#survey-results-image {
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    float: right;
+    height: 275px;
+    width: auto;
+    position: relative;
+    right: 85px
+}
+.survey-elements {
+    padding-bottom:10px
+}
+
+.survey-required {
+    color: red;
+    font-size: 13px;
+    position: relative;
+    top: -15px;
+}
+

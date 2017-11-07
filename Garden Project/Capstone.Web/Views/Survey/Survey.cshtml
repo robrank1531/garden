@@ -1,0 +1,32 @@
+﻿@using Capstone.Web.Models;
+@model  Survey
+@{
+    ViewBag.Name = "Survey";
+}
+
+<div class="survey-container">
+    <h2 style="text-align: center" id="head-color"> Vote For Your Favorite National Park!! </h2>
+
+    @using (Html.BeginForm("Survey", "Survey", FormMethod.Post))
+    {
+        <div class="survey-elements">
+            @Html.Label("Email", "Enter Your Email:")
+            <div class="survey-input">@Html.TextBoxFor(m => m.Email)</div>
+            <span class="survey-required"><br />@Html.ValidationMessageFor(m => m.Email)</span>
+        </div>
+        <div class="survey-elements">
+            @Html.Label("State", "What State Are You From?")
+            <div class="survey-input">@Html.DropDownListFor(m => m.State, Survey.ChooseState)</div>
+        </div>
+        <div class="survey-elements">
+            @Html.Label("ActivityLevel", "What Is Your Activity Level?")
+            <div class="survey-input">@Html.DropDownListFor(m => m.ActivityLevel, Survey.ActivityLevels)</div>
+        </div>
+        <div class="survey-elements">
+            @Html.Label("ParkCode", "What is your favorite park?")
+            <div class="survey-input"> @Html.DropDownListFor(m => m.ParkCode, Model.DropDownList)</div>
+        </div>
+        <button id="submit-button">Submit!</button>
+    }
+</div>
+    <img id="survey-image" src="~/Content/img/random/images.jpg" />
