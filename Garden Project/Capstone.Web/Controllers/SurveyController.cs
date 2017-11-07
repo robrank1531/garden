@@ -11,17 +11,17 @@ namespace Capstone.Web.Controllers
 {
     public class SurveyController : Controller
     {
-        private string connectionString = ConfigurationManager.ConnectionStrings["ParkWeatherDb"].ToString();
-        private readonly SurveySqlDAL surveyDal;
+        //private string connectionString = ConfigurationManager.ConnectionStrings["ParkWeatherDb"].ToString();
+        //private readonly SurveySqlDAL surveyDal;
 
-        public SurveyController()
-        {
-            this.surveyDal = new SurveySqlDAL(connectionString);
-        }
+        //public SurveyController()
+        //{
+        //    this.surveyDal = new SurveySqlDAL(connectionString);
+        //}
 
-        public ActionResult Survey()
-        {
-            return View();
-        }
+        //public ActionResult Survey()
+        //{
+        //    return View();
+        //}
     }
 }

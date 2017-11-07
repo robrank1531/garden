@@ -41,20 +41,10 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Maturity)
+            @{ string pic = item.Name + ".jpg";}
+            <img src="~/Content/img/@pic" />
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Size)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sun)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Spread)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Height)
-        </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>

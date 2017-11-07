@@ -21,7 +21,8 @@ namespace Capstone.Web.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            List<Plants> plants = plantDal.GetPlants();
+            return View(plants);
         }
 
         public ActionResult Detail(string id)
