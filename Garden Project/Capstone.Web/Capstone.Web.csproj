@@ -115,7 +115,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\img\bean.jpeg" />
+    <Content Include="Content\img\bean.jpg" />
     <Content Include="Content\img\carrot.jpg" />
     <Content Include="Content\img\cucumber.jpg" />
     <Content Include="Content\img\lettuce.jpg" />

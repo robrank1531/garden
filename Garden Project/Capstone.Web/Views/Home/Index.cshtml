@@ -14,21 +14,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Maturity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Size)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sun)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Spread)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Height)
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
@@ -42,17 +28,21 @@
         </td>
         <td>
             @{ string pic = item.Name + ".jpg";}
-            <img src="~/Content/img/@pic" />
+            <img style="width: 100%; height: auto;" src="~/Content/img/@pic" />
         </td>
 
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
-        <td>
+        
+
+        @*<td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
             @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
+        </td>*@
+    </tr>
+    <tr> 
     </tr>
 }
 
