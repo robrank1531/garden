@@ -7,8 +7,8 @@ using Capstone.Web.Models;
 
 namespace Capstone.Web.Dal
 {
-    public interface IParkWeatherDal
+    public class IPlantsSqlDal
     {
-        List<ParkWeatherModel> GetParks();
+        List<Plants> GetPlants();
     }
 }

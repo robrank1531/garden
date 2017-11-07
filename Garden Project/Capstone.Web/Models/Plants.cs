@@ -4,7 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Globalization;
 
-//namespace Capstone.Web.Models
+namespace Capstone.Web.Models
+{
+    public class Plants
+    {
+        public string Name { get; set; }
+        public string Maturity { get; set; }
+        public string Size { get; set; }
+        public string Sun { get; set; }
+        public string Spread { get; set; }
+        public string Height { get; set; }
+        public string Description { get; set; }
+    }
+}
 //{
 //    public class ParkWeatherModel
 //    {

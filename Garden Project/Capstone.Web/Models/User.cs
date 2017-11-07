@@ -8,7 +8,16 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.ComponentModel.DataAnnotations;
 
-//namespace Capstone.Web.Models
+namespace Capstone.Web.Models
+{
+    public class User
+    {
+        public string Name { get; set; }
+        public int Count { get; set; }
+        public DateTime PlantDate { get; set; }
+        public DateTime MaturityDate { get; set; }
+    }
+}
 //{
 //    public class Survey
 //    {        
@@ -97,7 +106,7 @@ using System.ComponentModel.DataAnnotations;
 //            new SelectListItem() { Text = "extremely active", Value = "extremely active"}
 //        };
 //<<<<<<< HEAD
-        
+
 
 //=======
 //>>>>>>> f8ade6b01088c083160acf6d6d8693270fd7c070
