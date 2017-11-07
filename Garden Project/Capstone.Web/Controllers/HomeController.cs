@@ -27,6 +27,8 @@ namespace Capstone.Web.Controllers
 
         public ActionResult Detail(string id)
         {
+            Plants p = new Plants();
+            //p = plantDal
             return View();
         }
     }

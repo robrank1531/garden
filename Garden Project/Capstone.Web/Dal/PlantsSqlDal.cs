@@ -11,6 +11,7 @@ namespace Capstone.Web.Dal
     {
         private readonly string connectionString;
         private string AllPlants = @"SELECT * FROM plants;";
+        private string PlantByName = @"SELECT * FROM plants WHERE name = @name;";
         public PlantsSqlDal(string connectionString)
         {
             this.connectionString = connectionString;
@@ -48,6 +49,38 @@ namespace Capstone.Web.Dal
                 throw;
             }
             return allPlants;
+        }
+        public Plants GetPlantByName(string name)
+        {
+            Plants p = new Plants();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand(PlantByName, conn);
+                    cmd.Parameters.AddWithValue("@name", name);
+                    SqlDataReader results = cmd.ExecuteReader();
+
+                    while (results.Read())
+                    {                        
+                        p.Name = Convert.ToString(results["name"]);
+                        p.Maturity = Convert.ToString(results["maturity"]);
+                        p.Height = Convert.ToString(results["height"]);
+                        p.Spread = Convert.ToString(results["spread"]);
+                        p.Size = Convert.ToString(results["size"]);
+                        p.Sun = Convert.ToString(results["sun"]);
+                        p.Description = Convert.ToString(results["description"]);                        
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+            return p;
         }
     }
 }
