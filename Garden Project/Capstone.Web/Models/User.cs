@@ -16,6 +16,7 @@ namespace Capstone.Web.Models
         public int Count { get; set; }
         public DateTime PlantDate { get; set; }
         public DateTime MaturityDate { get; set; }
+        public DateTime DaysToMaturity { get; set; }
     }
 }
 //{

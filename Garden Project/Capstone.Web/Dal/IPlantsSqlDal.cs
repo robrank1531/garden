@@ -7,7 +7,7 @@ using Capstone.Web.Models;
 
 namespace Capstone.Web.Dal
 {
-    public class IPlantsSqlDal
+    public interface IPlantsSqlDal
     {
         List<Plants> GetPlants();
     }

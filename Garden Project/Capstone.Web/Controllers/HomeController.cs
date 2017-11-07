@@ -12,11 +12,11 @@ namespace Capstone.Web.Controllers
     public class HomeController : Controller
     {
 
-        private readonly IParkWeatherDal applicationDal;
+        private readonly IPlantsSqlDal plantDal;
 
-        public HomeController(IParkWeatherDal applicationDal)
+        public HomeController(IPlantsSqlDal plantDal)
         {
-            this.applicationDal = applicationDal;
+            this.plantDal = plantDal;
         }
 
         public ActionResult Index()

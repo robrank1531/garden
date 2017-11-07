@@ -6,20 +6,94 @@ using System.Web;
 using Capstone.Web.Models;
 using System.Web.Mvc;
 
-//namespace Capstone.Web.Dal
+namespace Capstone.Web.Dal
+{
+    public class UserSqlDal
+    {
+        private readonly string connectionString;
+        private string addPlant = @"INSERT INTO plantuserinfo VALUES (@name, @count, GETDATE(), DATEADD(dd, @daysToMaturity, GETDATE()));";
+        private string getUserInfo = @"SELECT * FROM plantuserinfo;";
+
+        public UserSqlDal(string connectionString)
+        {
+            this.connectionString = connectionString;
+        }
+
+        public List<User> GetUserInfo()
+        {
+            List<User> userInfo = new List<User>();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(getUserInfo, conn);
+                    SqlDataReader results = cmd.ExecuteReader();
+                    while (results.Read())
+                    {
+                        User u = new User();
+                        u.Name = Convert.ToString(results["name"]);
+                        u.Count = Convert.ToInt32(results["count"]);
+                        u.PlantDate = Convert.ToDateTime(results["dateplanted"]);
+                        u.MaturityDate = Convert.ToDateTime(results["expectedmaturity"]);
+                        userInfo.Add(u);
+                    }
+                }
+            }
+            catch(SqlException ex)
+            {
+                throw;
+            }
+            return userInfo;
+        }
+        public bool NewInfo(User user)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(addPlant, conn);
+                    cmd.Parameters.AddWithValue("@name", user.Name);
+                    cmd.Parameters.AddWithValue("@count", user.Count);
+                    cmd.Parameters.AddWithValue("@daysToMaturity", user.DaysToMaturity);
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+            }
+            catch(SqlException ex)
+            {
+                return false;
+            }
+        }
+    }
+}
+//        public bool SubmitSurvey(Survey survey)
+//        {
+//            try
+//            {
+//                using (SqlConnection conn = new SqlConnection(connectionString))
+//                {
+//                    conn.Open();
+
+//                    SqlCommand cmd = new SqlCommand(SQL_SubmitSurvey, conn);
+//                    cmd.Parameters.AddWithValue("@parkCode", survey.ParkCode);
+//                    cmd.Parameters.AddWithValue("@emailAddress", survey.Email);
+//                    cmd.Parameters.AddWithValue("@activityLevel", survey.ActivityLevel);
+//                    cmd.Parameters.AddWithValue("@state", survey.State);
+//                    int rowsAffected = cmd.ExecuteNonQuery();
+
+//                    return rowsAffected > 0;
+//                }
+//            }
+//            catch (SqlException ex)
+//            {
+//                return false;
+//            }
+//        }
 //{
 //    public class SurveySqlDAL
 //    {
-//        private readonly string connectionString;
-//        private const string SQL_SubmitSurvey = @"INSERT INTO survey_result VALUES(@parkCode, @emailAddress, @state, @activityLevel);";
-//        private const string SQL_DisplaySurveyResults = "SELECT COUNT(*) as votes, s.parkCode, p.parkName from survey_result s join park p on p.parkCode = s.parkCode GROUP BY s.parkCode, p.parkName ORDER BY votes DESC;";
-//        private const string SQL_GetParkNames = "SELECT parkName, parkCode from park;";
-
-//        public SurveySqlDAL(string connectionString)
-//        {
-//            this.connectionString = connectionString;
-//        }
-
 //        public List<Survey> GetResults()
 //        {
 //            List<Survey> surveyResults = new List<Survey>();
@@ -46,30 +120,6 @@ using System.Web.Mvc;
 //                throw;
 //            }
 //            return surveyResults;
-//        }
-
-//        public bool SubmitSurvey(Survey survey)
-//        {
-//            try
-//            {
-//                using (SqlConnection conn = new SqlConnection(connectionString))
-//                {
-//                    conn.Open();
-
-//                    SqlCommand cmd = new SqlCommand(SQL_SubmitSurvey, conn);
-//                    cmd.Parameters.AddWithValue("@parkCode", survey.ParkCode);
-//                    cmd.Parameters.AddWithValue("@emailAddress", survey.Email);
-//                    cmd.Parameters.AddWithValue("@activityLevel", survey.ActivityLevel);
-//                    cmd.Parameters.AddWithValue("@state", survey.State);
-//                    int rowsAffected = cmd.ExecuteNonQuery();
-
-//                    return rowsAffected > 0;
-//                }
-//            }
-//            catch (SqlException ex)
-//            {
-//                return false;
-//            }
 //        }
 
 //        //to use with List<SelectListItem> ChoosePark
