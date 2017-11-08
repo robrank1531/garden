@@ -4,16 +4,16 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h1 align="center">Local Garden</h1>
 
 
 <table class="table">
     <tr>
-        <th>
+        <th  style="font-size: 30px">
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th> </th>
-        <th>
+        <th style="font-size: 30px">
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th></th>
@@ -22,17 +22,24 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            <div style="font-size: 20px">
             @Html.DisplayFor(modelItem => item.Name)
+                </div>
         </td>
         <td>
+            <div class="jango" style="padding-left: 20px">
             @{ string pic = item.Name + ".jpg";}
             <a href="@Url.Action("Detail", "Home", new { id = item.Name })">
-                <img style="width: 100%; height: auto;" src="~/Content/img/@pic" />
+                <img style="width: 100%; height: auto;" src="~/Content/img/@pic"/>
+               
                 </a>
+                </div>
 </td>
 
         <td>
+            <div style="padding-left: 15px">
             @Html.DisplayFor(modelItem => item.Description)
+            </div>
         </td>
         
 

@@ -1,5 +1,13 @@
-﻿/*Layout Page CSS*/
-body {
+﻿/*/*Layout Page CSS*/
+.jango{
+    font-size: 50%;
+    padding-left: 20px;
+    font-style: italic;
+
+}
+
+
+/*body {
     background: #D9D8DF;
     margin: 0;
     padding: 0;
@@ -278,5 +286,5 @@ th {
     font-size: 13px;
     position: relative;
     top: -15px;
-}
+}*/*/
 
