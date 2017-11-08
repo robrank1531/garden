@@ -1,3 +1,5 @@
+SELECT * FROM plants
+
 
 create table plants (
 name varchar(255) NOT NULL,
